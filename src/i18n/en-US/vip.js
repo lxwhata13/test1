@@ -1,0 +1,23 @@
+export default {
+  vipName: 'VIP{level}',
+  slogan: 'Not far from VIP{level}',
+  depositAmount: 'Deposit Amount',
+  currentDepositAmount: 'Current Deposit Amount',
+  codificationVolume: 'Codification Volume',
+  currentCodificationVolume: 'Codification Volume',
+  numberWithdrawal: 'Number of withdrawal: {number} times/day',
+  maxWithdrawalAmount: 'Maximum withdrawal amount: @:common.currencyAmount',
+  withdrawalFee: 'Withdrawal fee: @:common.percentage',
+  claimReward: 'Claim Reward',
+  rewardClaimed: 'Reward Claimed',
+  title: {
+    allVips: 'All VIPs',
+    vipLevelReward: 'VIP Level Reward',
+    levelPrivileges: 'Level privileges',
+    updateCondition: 'Update Condition',
+    guaranteedTopUp: 'VIP guaranteed top-up',
+    almostDaysToRecharge: 'Almost days to recharge BRL',
+    levelSignupReward: 'VIP {level} Check-in Reward',
+    signupReward: ' Check-in Reward',
+  },
+};

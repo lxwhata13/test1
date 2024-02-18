@@ -1,0 +1,3439 @@
+// ==================================================
+// ===== 引入初始化 Quaser 样式文件 ==================
+// ==================================================
+@import "AppSkinD-quasar";
+// ==================================================
+// ===== 初始化html =================================
+// ==================================================
+body {
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  font-feature-settings: "tnum";
+  color: #a7a7a7;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+.q-btn {
+  line-height: normal;
+  text-transform: none;
+  padding: 0px;
+  min-height: auto;
+}
+// ==================================================
+// ===== 公共样式 ===================================
+// ==================================================
+// ========== 颜色 ===========
+.c-red {
+  color: #ff3a3a !important;
+}
+.c-yellow {
+  color: #eddc13 !important;
+}
+.Sys_Btn_Submit {
+  .q-btn {
+    width: 100%;
+    font-size: 18px;
+    .q-btn__content {
+      position: relative;
+      @include Btn_box_background();
+    }
+  }
+}
+// ========== 浮动客服 ===========
+.Sys_bottom_sticky {
+  width: 40px;
+  bottom: 50px;
+  right: 8px;
+  z-index: 99;
+  .q-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #6b048c url(~assets/AppSkinD/images/System/Icon_44.png) no-repeat 8px 7px / auto 60%;
+    box-shadow:
+      0px 0px 2px rgba(255, 255, 255, 0.2) inset,
+      1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  .q-btn:nth-child(2) {
+    margin-top: 10px;
+    background: #6b048c url(~assets/AppSkinD/images/System/Icon_45.png) no-repeat 8px 7px / auto 58%;
+  }
+}
+// ========== 暂无数据 ===========
+.No_data {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  p {
+    width: 100%;
+    height: 150px;
+    padding: 0px;
+    margin: 0px;
+    background: url(~assets/AppSkinD/images/System/No_data.png) no-repeat center bottom;
+    background-size: auto 100%;
+  }
+}
+// ==================================================
+// ===== 游戏页面 ===================================
+// ==================================================
+.ganme_return {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  box-shadow: none;
+  background: url(~assets/AppSkinD/images/System/Site_04.png) no-repeat center bottom;
+  background-size: auto 100%;
+  text-indent: 200%;
+  overflow: hidden;
+}
+.q-btn:before {
+  box-shadow: none;
+}
+// ==================================================
+// ===== 登录、注册、忘记密码 ========================
+// ==================================================
+.Sys_page_LoginLayout,
+.Sys_page_LoginLayout_login {
+  .q-header {
+    .q-toolbar {
+      background: none;
+    }
+  }
+}
+.Sys_page_LoginLayout_login {
+  background: url(~assets/AppSkinD/images/System/Bg_login.png) no-repeat center top / 100% auto;
+  .q-page-container {
+    background: none;
+  }
+}
+
+.login_img {
+  padding: 10% 0px;
+  text-align: center;
+  img {
+    width: 85%;
+  }
+}
+.LoginLayout_title {
+  min-height: auto;
+  padding: 25px 8% 15px 8%;
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.8);
+}
+
+.LoginLayout_list {
+  padding: 10px 8%;
+  .Sys_Btn_Submit {
+    padding: 15px 0px 20px 0px;
+  }
+}
+// 表单
+.Sys_page_LoginLayout_login {
+  .Sys_input_text {
+    .q-anchor--skip {
+      background-repeat: no-repeat;
+      background-position: 15px center;
+      background-size: auto 42%;
+      input {
+        padding-left: 50px !important;
+      }
+    }
+  }
+  .Sys_input_text:nth-child(1) .q-anchor--skip {
+    background-image: url(~assets/AppSkinD/images/System/Icon_34.png);
+  }
+  .Sys_input_text:nth-child(2) .q-anchor--skip {
+    background-image: url(~assets/AppSkinD/images/System/Icon_35.png);
+  }
+}
+.List_bottom_text {
+  text-align: center;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ccc;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.8);
+  .q-btn::before {
+    display: none;
+  }
+  i {
+    color: #e72626;
+    font-style: normal;
+    margin-left: 3px;
+  }
+}
+.List_right_text {
+  text-align: right;
+}
+// ==========
+.Sys_input_text_code {
+  .q-field__inner {
+    z-index: 1;
+  }
+  .q-field__after {
+    position: absolute;
+    z-index: 2;
+    right: 5px;
+    top: 5px;
+    height: auto;
+  }
+}
+.Sys_input_text_code .q-field__after .q-btn {
+  font-size: 12px;
+  line-height: 12px;
+  width: 110px;
+  height: 37px;
+  background-size: auto 100%;
+  .q-btn__content {
+    border-radius: $radius;
+    background: $btn-background-color;
+    background-size: auto 60px;
+    box-shadow: none;
+    .block {
+      transform: scale(0.85);
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+.Sys_input_text_phone {
+  &::before {
+    content: "+52";
+    position: absolute;
+    left: 15px;
+    top: 11px;
+    z-index: 1;
+    border-right: solid 1px #555670;
+    line-height: 22px;
+    padding: 0px 18px;
+    padding-left: 0px;
+  }
+  .q-field__inner .q-field__control .q-anchor--skip input {
+    padding: 14px 15px 14px 80px;
+  }
+}
+// ==================================================
+// =========== Tabs Jogo ============================
+// ==================================================
+// .Home_page {
+//   background: linear-gradient(#2b2720, #1b1b1b 50%, #1b1b1b);
+// }
+.Home_top_four {
+  display: block;
+}
+.Home_banner {
+  position: relative;
+  padding: 16px 16px 0px 16px;
+  z-index: 2;
+  .Home_banner_box {
+    position: relative;
+    z-index: 5;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    .q-carousel {
+      background-color: transparent;
+      height: auto;
+      z-index: 5;
+      .q-carousel__slide {
+        border-radius: 10px;
+        background-image: none !important;
+        padding: 0px;
+        .slide_box {
+          width: 100%;
+          margin: 0px;
+          padding: 0px;
+          img {
+            border-radius: 10px;
+            width: 100%;
+          }
+        }
+        img {
+          border-radius: 10px;
+        }
+      }
+      .q-carousel__control {
+        .q-carousel__navigation-inner {
+          .q-btn {
+            min-width: 5px;
+            min-height: 5px;
+            padding: 0px;
+            margin: 0px 3px;
+            background-color: rgb(255, 255, 255, 0.3);
+            border-radius: 5px;
+            opacity: 1;
+            //transform: skewX(20deg);
+            .q-focus-helper,
+            .q-btn__content {
+              display: none;
+            }
+          }
+          .q-carousel__navigation-icon--active {
+            min-width: 16px;
+            background-color: rgb(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+  }
+}
+// ==========
+.Home_MarqueeX {
+  position: relative;
+  z-index: 2;
+  padding: 0px 10px;
+  .Home_MarqueeX_box {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0px 15px 0px 45px;
+  }
+  p {
+    margin-top: -1px !important;
+  }
+  i {
+    position: absolute;
+    left: 8px;
+    right: 0px;
+    width: 45px;
+    height: 40px;
+    background: url(~assets/AppSkinD/images/Home/Icon_03.gif) no-repeat 10px 10px;
+    background-size: 40% auto;
+  }
+}
+// ==========
+.Home_menu {
+  position: relative;
+  z-index: 2;
+  padding: 5px 0px;
+  ul {
+    width: 100%;
+    display: table;
+    padding: 0px 10px;
+    li {
+      float: left;
+      width: 25%;
+      padding: 0px 3px;
+      a {
+        position: relative;
+        display: block;
+        text-align: center;
+        line-height: 12px;
+        padding: 0px 5px;
+        height: 75px;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 100%;
+          height: 55px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto 80%;
+          background-color: #540474;
+          border-radius: $radius;
+          box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1) inset, 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        span {
+          position: absolute;
+          left: 50%;
+          bottom: 0px;
+          transform: translateX(-50%);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+          color: #fff;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+      }
+      &:nth-child(1) a::before {
+        background-image: url(~assets/AppSkinD/images/Home/menu_05.png);
+      }
+      &:nth-child(2) a::before {
+        background-image: url(~assets/AppSkinD/images/Home/menu_06.png);
+      }
+      &:nth-child(3) a::before {
+        background-image: url(~assets/AppSkinD/images/Home/menu_07.png);
+      }
+      &:nth-child(4) a::before {
+        background-image: url(~assets/AppSkinD/images/Home/menu_08.png);
+      }
+    }
+  }
+}
+// ==========
+.Home_Links_two {
+  padding: 16px 10px 10px 10px;
+  ul {
+    display: flex;
+    li {
+      padding: 0px 5px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+// ==========
+.Home_help {
+  padding: 0px 16px 16px 16px;
+  .box {
+    color: #ccc;
+    line-height: 18px;
+  }
+}
+// ==================================================
+// ================== 游戏列表 ====================
+// ==================================================
+.Ul_game {
+  position: relative;
+  width: 100px;
+  min-height: 120px;
+  border-radius: $radius + $radius;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  li {
+    position: relative;
+    padding: 0px 5px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: $radius;
+    }
+    span {
+      display: inline-block;
+      width: 75px;
+      height: 22px;
+      line-height: 22px;
+      border-radius: 5px;
+      background: linear-gradient(to bottom, #fef266, #b0ac6f);
+      box-shadow:
+        0px -3px 0px rgba(0, 0, 0, 0.1) inset,
+        0px 1px 2px rgba(0, 0, 0, 0.1);
+      margin-top: 8px;
+    }
+    &:nth-child(1) {
+      padding: 0px;
+      z-index: 4;
+    }
+    &:nth-child(2) {
+      background: #09cd0d;
+      margin-top: -25px;
+      z-index: 5;
+      border-radius: 0px 0px $radius $radius;
+      padding: 20px 0px 5px 0px;
+      background: linear-gradient(to bottom, rgba(84, 4, 116, 0), #540474 15px, #540474);
+      box-shadow: 0px -1px 1px rgba(255, 255, 255, 0.05) inset;
+      p {
+        height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        color: #fffd7f;
+        &:nth-child(1) {
+          padding: 0px 5px;
+        }
+        &:nth-child(2) {
+          width: 130%;
+          transform: scale(0.8);
+          font-size: 12px;
+          color: #eee;
+          margin-left: -15%;
+        }
+      }
+    }
+    &:nth-child(3) {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+      display: none;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 6;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #0009;
+        border-radius: $radius;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        margin-top: -14%;
+        z-index: 7;
+        width: 100%;
+        height: 50px;
+        background: url(~assets/AppSkinD/images/System/Icon_0_03.png) no-repeat center center / auto 100%;
+      }
+    }
+  }
+  &:hover li:nth-child(3) {
+    display: block;
+    cursor: pointer;
+    &::before {
+      backdrop-filter: blur(3px);
+    }
+    &::after {
+      animation-name: scaleActive-a1a07a36;
+      animation-duration: 0.5s;
+    }
+  }
+}
+.Ul_game.Hot {
+  &::before {
+    content: "HOT";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(to bottom, #ff0000, #e58a3a);
+    font-size: 12px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    padding: 0px 10px;
+    border-radius: $radius - 3px;
+    z-index: 5;
+    transform: scale(0.8);
+  }
+}
+@keyframes scaleActive-a1a07a36 {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+@keyframes slide-in-blurred-top-a1a07a36 {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+// =========== 首页游戏列表 ========================
+.game_recommend {
+  padding: 0px 16px;
+  .game_recommend_box {
+    .game_recommend_title {
+      padding: 10px 0px 16px 0px;
+      img {
+        width: 30px;
+        height: 30px;
+        float: left;
+      }
+      .title_text {
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        margin-left: 6px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fdf36f;
+      }
+      .more {
+        float: right;
+        .q-btn {
+          height: 30px;
+          color: #ccc;
+          .q-btn__content {
+            padding: 0px 2px 0px 10px;
+            justify-content: left;
+            &::after {
+              content: "";
+              display: inline-block;
+              width: 16px;
+              height: 28px;
+              background: url(~assets/AppSkinD/images/System/Site_07.png) no-repeat center 8px / auto 50%;
+            }
+            &::before {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 26px;
+              background: #540474;
+              z-index: -1;
+              border-radius: 4px;
+              left: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.home_game_list {
+  display: table;
+  width: 100%;
+  a {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    margin-bottom: 16px;
+    &:nth-child(3n) {
+      margin-right: 0px;
+    }
+    ul {
+      width: 100%;
+      min-height: auto;
+      border-radius: 12px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      li {
+        &:nth-child(1) {
+          width: 100%;
+          height: auto;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+// =========== tabGames ========================
+.TabGames_one {
+  padding: 16px;
+  .q-tabs {
+    padding: 0px !important;
+    .q-tabs__arrow {
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background: rgba(0, 0, 0, 0);
+      pointer-events: all;
+      min-width: 30px;
+      svg {
+        width: 30px;
+        height: 30px;
+        background-color: #6b048c;
+        border-radius: $radius;
+      }
+    }
+    .q-tabs__arrow--left {
+      justify-content: flex-start;
+      left: -10px;
+    }
+    .q-tabs__arrow--right {
+      justify-content: end;
+      right: -10px;
+    }
+    .q-tabs__arrow--faded {
+      opacity: 0;
+    }
+    .q-tabs__content {
+      justify-content: flex-start;
+      .q-tab {
+        padding: 0px;
+        margin: 0px;
+        .q-focus-helper {
+          display: none;
+        }
+        .q-tab__content {
+          padding: 0px;
+        }
+        .q-tab__indicator {
+          display: none;
+        }
+        ul {
+          margin-left: 15px;
+          width: 95px;
+          text-transform: none;
+        }
+        &:nth-child(1) {
+          ul {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+.MoreGameList {
+  padding: 0px 16px 16px 16px;
+  .MoreGameList_box {
+    width: 100%;
+    padding: 0px 20px 20px;
+    @include box_background();
+    a {
+      display: table;
+      width: 100%;
+      box-sizing: border-box;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+      &:nth-child(4n) {
+        margin-right: 0%;
+      }
+      ul {
+        position: relative;
+        padding: 0px 81px 0px 86px;
+        margin-top: 16px;
+        li {
+          height: 70px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+          }
+          &:nth-child(1) {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 86px;
+            align-items: flex-start;
+          }
+          &:nth-child(2) {
+            p {
+              width: 100%;
+              &:nth-child(1) {
+                font-size: 16px;
+                font-weight: bold;
+              }
+              &:nth-child(2) {
+                font-size: 12px;
+                color: #ccc;
+                margin-top: 5px;
+              }
+            }
+          }
+          &:nth-child(3) {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 81px;
+            align-items: flex-end;
+            span {
+              display: inline-block;
+              width: 75px;
+              @include Btn_box_background();
+              border-radius: $radius;
+              text-align: center;
+              padding: 5px 0px;
+              text-shadow: none;
+              color: #fff;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+              line-height: 11px;
+              font-size: 12px;
+              transform: scale(0.95);
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// ================== 排行榜 ====================
+// ==================================================
+.CompImg {
+  width: 100%;
+  position: relative;
+  a {
+    display: block;
+  }
+  .CompImg_pic {
+    display: table;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      float: left;
+    }
+    .q-img {
+      .q-img__container {
+        background: #540474 url(~assets/AppSkinD/images/Home/Bb_01.png) no-repeat right top / auto 100%;
+        box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1) inset, 1px 1px 5px rgba(0, 0, 0, 0.2);
+        border-radius: $radius;
+        img {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  ul {
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #fceca6;
+    text-shadow:
+      #684935 1px 0 0,
+      #684935 0 1px 0,
+      #684935 -1px 0 0,
+      #684935 0 -1px 0;
+    h3 {
+      font-size: 16px;
+      line-height: 18px;
+      padding: 0px;
+      margin: 0px;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    li {
+      p {
+        span {
+          &:nth-child(1) {
+            margin-right: 2px;
+          }
+          &:nth-child(2) {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+// ================== 首页Jogo,自动切换列表 ====================
+.CompBanner {
+  width: 100%;
+  padding: 16px;
+  .q-carousel {
+    background: none;
+    height: 105px;
+    border-radius: $radius;
+    box-shadow:
+      0px 1px 1px rgba(255, 255, 255, 0.1) inset,
+      1px 1px 3px rgba(0, 0, 0, 0.5);
+    .q-carousel__slide {
+      padding: 0px;
+      background-size: 100% 100%;
+      border-radius: 5px;
+      background-image: none !important;
+      .CompImg {
+        display: flex;
+        background: #540474 url(~assets/AppSkinD/images/Home/Bb_01.png) no-repeat right top / auto 100%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+// ================== 排行榜，列表页 ====================
+.Comp_list {
+  padding: 16px;
+  .CompImg {
+    margin-bottom: 16px;
+    .q-img__image {
+      border-radius: 5px;
+    }
+  }
+}
+// ================== 排行榜，详情页 ====================
+.Sys_page_CompDetails {
+  background: url(~assets/AppSkinD/images/System/Bb_11.png) no-repeat center top / 100% auto;
+}
+.CompDetails_one {
+  padding: 30px 0px 20px 0px;
+  p {
+    font-weight: bold;
+    text-align: center;
+    color: #fceca6;
+    &:nth-child(1) {
+      font-size: 16px;
+      text-shadow:
+        #684935 1px 0 0,
+        #684935 0 1px 0,
+        #684935 -1px 0 0,
+        #684935 0 -1px 0;
+    }
+    &:nth-child(2) {
+      line-height: 40px;
+      font-size: 40px;
+      color: #f0df12;
+      -webkit-text-stroke-color: #684935;
+      -webkit-text-stroke-width: 1px;
+    }
+  }
+}
+.CompDetails_two {
+  text-align: center;
+  padding-bottom: 20px;
+  p {
+    line-height: 16px;
+    font-size: 12px;
+    span {
+      display: inline-block;
+      margin: 0px 3px;
+      padding: 0px 3px;
+      border-radius: 3px;
+      min-width: 20px;
+      background: linear-gradient(to bottom, #f24f92, #e2285e);
+    }
+  }
+}
+.CompDetails_three {
+  width: 100%;
+  min-height: 120px;
+  position: relative;
+  margin-top: 10px;
+  ul {
+    display: inline-block;
+    width: 33.33%;
+    padding: 0px 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    li {
+      text-align: center;
+      font-size: 12px;
+      &:nth-child(1) {
+        span {
+          position: relative;
+          display: inline-block;
+          border-radius: 100%;
+          border: solid 2px #fdf36f;
+          img {
+            float: left;
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+          }
+          &::after {
+            content: "1";
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            border-radius: 100%;
+            top: -5px;
+            right: -2px;
+            background: linear-gradient(to right, #f54c01, #e4d605);
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.5);
+          }
+        }
+      }
+      &:nth-child(2) {
+        margin-top: -12px;
+        span {
+          position: relative;
+          display: inline-block;
+          line-height: 16px;
+          min-width: 65px;
+          padding: 0px 10px;
+          border-radius: 10px;
+          background: linear-gradient(to right, #7b8fee, #32313f);
+        }
+      }
+      &:nth-child(3) {
+        padding-top: 5px;
+        color: #fdf36f;
+      }
+    }
+    &:nth-child(1) {
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      &:nth-child(1) {
+        span {
+          img {
+            width: 70px;
+            height: 70px;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      position: absolute;
+      top: 10px;
+      left: 3%;
+      li {
+        &:nth-child(1) {
+          span {
+            &::after {
+              content: "2";
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              background: linear-gradient(to right, #d7223f, #e9616c);
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      position: absolute;
+      top: 10px;
+      right: 3%;
+      li {
+        &:nth-child(1) {
+          span {
+            &::after {
+              content: "3";
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              background: linear-gradient(to right, #0b6ea0, #7795ec);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.CompDetails_list {
+  padding: 16px;
+  ul {
+    display: table;
+    width: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, rgba(51, 50, 64, 0.5), rgba(41, 41, 51, 0.5));
+    box-shadow:
+      0px 1px 1px rgba(255, 255, 255, 0.1) inset,
+      1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin-bottom: 12px;
+    padding: 6px 0px;
+    li {
+      float: left;
+      margin: 0px 5px;
+      color: #fdf36f;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      span {
+        display: table;
+        img {
+          float: left;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+        }
+      }
+      &:nth-child(1) {
+        font-weight: bold;
+        width: 30px;
+        justify-content: center;
+        padding: 0px;
+      }
+      &:nth-child(3) {
+        float: right;
+        padding-right: 16px;
+        color: #fff;
+      }
+    }
+  }
+}
+.Sys_bottom_sticky {
+  .q-btn-Comp:nth-child(1) {
+    background-image: url(~assets/AppSkinD/images/System/Icon_52.png);
+  }
+  .q-btn-Comp:nth-child(2) {
+    background-image: url(~assets/AppSkinD/images/System/Icon_53.png);
+  }
+}
+// ==================================================
+// =========== Tabs Promoção ========================
+// ==================================================
+.promotion_one {
+  padding: 16px;
+  .promotion_one_box {
+    @include box_background();
+  }
+  ul {
+    width: 100%;
+    display: table;
+    position: relative;
+    padding: 16px;
+    &::after {
+      content: "";
+      width: calc(100% - 32px);
+      height: 1px;
+      position: absolute;
+      left: 16px;
+      bottom: 0px;
+      border-top: solid 1px rgb(0 0 0 / 90%);
+      border-bottom: solid 1px rgb(255 255 255 / 8%);
+    }
+    li {
+      float: left;
+      text-align: center;
+      line-height: 30px;
+      font-size: 20px;
+      &:nth-child(2) {
+        color: #fdf36f;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0px;
+        .q-btn {
+          width: auto;
+          font-size: 12px;
+          padding: 0px;
+          background: none;
+          .q-btn__content {
+            padding: 5px 10px;
+            box-shadow:
+              0px -11px 0px rgb(0, 0, 0, 0.2) inset,
+              0px -2px 1px rgba(0, 0, 0, 0.2) inset,
+              0px 1px 2px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+  ol {
+    display: table;
+    width: 100%;
+    padding-bottom: 16px;
+    h3 {
+      position: relative;
+      float: left;
+      display: table;
+      width: 100%;
+      padding: 15px 16px;
+      box-sizing: border-box;
+      color: #fff;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: normal;
+    }
+    li {
+      float: left;
+      width: 50%;
+      font-size: 16px;
+      justify-content: center;
+      text-align: center;
+      color: #fdf36f;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 30px;
+        line-height: 14px;
+        font-size: 12px;
+        transform: scale(0.8);
+        color: #ccc;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.promotion_two {
+  padding: 0px 16px 16px;
+  ul {
+    display: table;
+    width: 100%;
+    li {
+      width: 65%;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      &:nth-child(2) {
+        width: 35%;
+        padding-left: 16px;
+      }
+      .q-btn {
+        width: 100%;
+        font-size: 12px;
+        @include box_background();
+        color: #ff7070;
+        .q-btn__content {
+          line-height: 40px;
+          &::before {
+            content: "";
+            width: 30px;
+            height: 40px;
+            background: url(~assets/AppSkinD/images/System/Icon_0_01.png) no-repeat center center / auto 45%;
+            margin-left: -10px;
+          }
+        }
+      }
+      &:nth-child(2) {
+        .q-btn {
+          .q-btn__content {
+            &::before {
+              background: url(~assets/AppSkinD/images/System/Icon_0_02.png) no-repeat center center / auto 45%;
+              margin-left: -10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.promotion_receive {
+  .Trade_two_a {
+    .q-scrollarea {
+      height: 145px;
+    }
+    ul {
+      width: 90px;
+      li {
+        text-align: center;
+        position: relative;
+      }
+      li:nth-child(1) {
+        color: #fff;
+        padding-top: 20px;
+        font-size: 15px;
+        height: 42px;
+      }
+      li:nth-child(2) {
+        height: 70px;
+        background: url(~assets/AppSkinD/images/Box/A01_Box_a.png) no-repeat center bottom;
+        background-size: auto 60%;
+      }
+      li:nth-child(2):before {
+        position: absolute;
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        background-color: #444;
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+        z-index: 5;
+      }
+      li:nth-child(2):after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: #444;
+        left: 0px;
+        top: 10px;
+        z-index: 1;
+      }
+      li:nth-child(3) {
+        padding-top: 3px;
+        color: #eee;
+      }
+    }
+  }
+  .Trade_two_a ul:first-child li:nth-child(2):after {
+    width: 50%;
+    left: 50%;
+  }
+  .Trade_two_a ul:last-child li:nth-child(2):after {
+    width: 50%;
+  }
+  .Trade_two_a ul.on li:nth-child(1):after {
+    content: "";
+    position: absolute;
+    width: 35%;
+    height: 4px;
+    left: 100%;
+    bottom: -14px;
+    z-index: 3;
+    background: linear-gradient(to right, rgba(240, 223, 18, 1), rgba(240, 223, 18, 0));
+  }
+  .Trade_two_a ul.on li:nth-child(2):before,
+  .Trade_two_a ul.on li:nth-child(2):after {
+    background-color: #f0df12;
+  }
+  .Trade_two_a ul.on li:nth-child(2) {
+    height: 70px;
+    background: url(~assets/AppSkinD/images/Box/A01_Box_b.png) no-repeat center bottom;
+    background-size: auto 60%;
+  }
+  .Trade_two_a ul.on li:nth-child(3) {
+    color: #f0df12;
+  }
+  .Trade_two_a ul.received li:nth-child(2) {
+    height: 70px;
+    background: url(~assets/AppSkinD/images/Box/A01_Box_c.png) no-repeat center bottom;
+    background-size: auto 60%;
+  }
+  .Trade_two_a ul.on:last-child li:nth-child(1):after {
+    display: none;
+  }
+}
+.promotion_three {
+  padding: 0px 16px 16px 16px;
+  .promotion_three_box {
+    padding-top: 16px;
+    @include box_background();
+    .promotion_title {
+      font-size: 14px;
+      padding: 0px 16px 16px 16px;
+      color: #fff;
+    }
+    .promotion_text {
+      padding: 0px 16px 16px;
+      font-size: 12px;
+
+      img {
+        max-width: 100%;
+      }
+      strong {
+        font-weight: normal;
+      }
+    }
+  }
+}
+// ========== promotion 弹窗 ==========
+.Sys_dialog_promotion {
+  position: relative;
+  @include Sys_Dialog();
+  .q-btn--dense {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 30px;
+    height: 30px;
+    text-indent: 100px;
+    overflow: hidden;
+    z-index: 10;
+    background: url(~assets/AppSkinD/images/System/Site_02.png) no-repeat center center / auto 45%;
+  }
+  .promotion {
+    padding: 16px;
+    ul {
+      display: flex;
+      margin: 20px 0px;
+      position: relative;
+      &::after {
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        content: "";
+        width: calc(100% - 30%);
+        height: 1px;
+        border: solid 2px #7f07a6;
+      }
+      li {
+        width: 33.33%;
+        flex: auto;
+        font-size: 12px;
+        text-align: center;
+        line-height: 14px;
+        z-index: 5;
+        p {
+          &:nth-child(1) {
+            b {
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              background-color: #6b048c;
+              border-radius: 100%;
+              border: solid 3px #7f07a6;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: auto 50%;
+            }
+          }
+          &:nth-child(2) {
+            transform: scale(0.8);
+          }
+        }
+        &:nth-child(1) p b {
+          background-image: url(~assets/AppSkinD/images/System/Icon_48.png);
+        }
+        &:nth-child(2) p b {
+          background-image: url(~assets/AppSkinD/images/System/Icon_49.png);
+        }
+        &:nth-child(3) p b {
+          background-image: url(~assets/AppSkinD/images/System/Icon_50.png);
+        }
+      }
+    }
+    ol {
+      li {
+        position: relative;
+        color: #fff;
+        &:nth-child(2),
+        &:nth-child(4) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 8px 0px;
+          @include Sys_select();
+          p {
+            font-size: 12px;
+            width: calc(100% - 35px);
+            height: 35px;
+            line-height: 35px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            color: #ccc;
+            padding-left: 15px;
+          }
+          .q-btn {
+            width: 35px;
+            height: 30px;
+            background: none;
+            box-shadow: none;
+            &::before,
+            .q-focus-helper {
+              display: none;
+            }
+            .q-btn__content {
+              position: absolute;
+              left: 0px;
+              top: 0px;
+              display: block;
+              width: 100%;
+              height: 100%;
+              text-indent: 100px;
+              overflow: hidden;
+              background: url(~assets/AppSkinD/images/System/Site_10.png) no-repeat center center / 60% auto;
+            }
+          }
+        }
+        &:last-child {
+          text-align: center;
+          padding-top: 8px;
+          img {
+            width: 110px;
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// =========== team ========================
+// ==================================================
+.team_one {
+  padding: 16px 16px 0px 16px;
+  ul {
+    display: table;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    @include box_background();
+    li {
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 16px;
+      padding-bottom: 10px;
+      color: #e7df70;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        line-height: 14px;
+        color: #ccc;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+.team_tab {
+  padding: 16px;
+  .menu {
+    display: flex;
+    @include Tabs_background();
+    li {
+      flex: auto;
+      text-align: center;
+      .q-btn {
+        width: 100%;
+        height: 40px;
+        border-radius: 8px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+        color: #fff;
+      }
+      .active {
+        @include Tabs_active();
+        color: #ff7070;
+      }
+    }
+  }
+  .team_list {
+    .stati {
+      padding: 10px 0px;
+      li {
+        padding: 6px 0px;
+        font-size: 12px;
+        color: #ccc;
+        span:last-child {
+          float: right;
+          color: #fff;
+        }
+        &:last-child {
+          border-top: solid 1px rgb(255, 255, 255, 0.1);
+          padding: 12px 0px;
+          margin-top: 8px;
+          span {
+            font-weight: bold;
+            color: #e9174c;
+          }
+        }
+      }
+    }
+    .datalist_scroll {
+      .datalist_scroll_box {
+        width: 100%;
+        height: auto;
+        overflow-y: scroll;
+        ul {
+          width: 450px;
+          display: flex;
+          text-align: center;
+          li {
+            display: flex;
+            width: 90px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .name {
+          background-color: #4e036c;
+          li {
+            padding: 0px 5px;
+            span {
+              display: block;
+              line-height: 14px;
+              transform: scale(0.8);
+            }
+          }
+        }
+        .data {
+          ul {
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0px;
+              bottom: 0px;
+              width: 100%;
+              height: 1px;
+              background-color: rgb(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// =========== Tabs rewards ========================
+// ==================================================
+.Award {
+  padding: 0px 16px 16px 16px;
+  &:nth-child(1) {
+    padding-top: 16px;
+  }
+  .Award_ul {
+    ul {
+      position: relative;
+      border-radius: 10px;
+      @include box_background();
+      padding: 15px;
+      li {
+        padding-left: 90px;
+        &:nth-child(1) {
+          position: absolute;
+          top: 15px;
+          left: 10px;
+          width: 90px;
+          height: 60px;
+          padding: 0px;
+          text-align: center;
+          background-repeat: no-repeat;
+          background-position: center 2px;
+          background-size: 60px auto;
+        }
+        &:nth-child(2) {
+          color: #e3db75;
+          line-height: 25px;
+          p {
+            display: inline-block;
+          }
+          .q-btn {
+            width: 25px;
+            height: 25px;
+            overflow: hidden;
+            text-indent: -1000px;
+            background: url(~assets/AppSkinD/images/System/Icon_55.png) no-repeat center center / 55% auto;
+          }
+        }
+        &:nth-child(3) {
+          font-size: 12px;
+          padding-bottom: 5px;
+        }
+        &:nth-child(4) {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      .Operar {
+        padding: 15px 0px 0px 0px;
+        text-align: center;
+        .q-btn {
+          @include Btn_box_background();
+          min-width: 85px;
+          padding: 7px 0px;
+          .q-focus-helper {
+            display: none;
+          }
+        }
+        .disabled {
+          filter: grayscale(80%);
+        }
+      }
+
+      .Agendar {
+        width: 130%;
+        font-size: 12px;
+        line-height: 14px;
+        transform: scale(0.7);
+        margin-left: -11%;
+        p {
+          width: 100%;
+          text-align: right;
+          &:nth-child(2) {
+            margin-top: 5px;
+            display: table;
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            span {
+              display: inline-block;
+              height: 10px;
+              border-radius: 10px;
+              background: linear-gradient(#eee, #6bc602);
+              left: 0px;
+              top: 0px;
+              float: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==================================================
+// =============== promotionDetail ==================
+// ==================================================
+.Detalhes_top {
+  padding: 16px 16px 0px 16px;
+  .box {
+    background: linear-gradient(to bottom, #3d4379, #31335a);
+    box-shadow:
+      0px 1px 1px rgba(255, 255, 255, 0.1) inset,
+      1px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 16px;
+    ul,
+    ol {
+      position: relative;
+      display: table;
+      width: 100%;
+    }
+    ul {
+      background-color: rgb(0, 0, 0, 0.2);
+      color: #ccc;
+      padding: 4px 0px;
+      border-radius: 5px;
+      span {
+        display: inline-block;
+        transform: scale(0.8);
+      }
+    }
+    ol {
+      padding: 5px 0px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 2px;
+        border-top: solid 1px rgba(0, 0, 0, 0.4);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.08);
+      }
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    li {
+      width: 50%;
+      float: left;
+      text-align: center;
+      font-size: 12px;
+      &:nth-child(2) {
+        b {
+          color: #0ace0c;
+        }
+      }
+    }
+  }
+}
+.Detalhes_List {
+  padding: 15px;
+  .title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    li {
+      float: left;
+      color: #999;
+      font-size: 12px;
+      line-height: 14px;
+      &:nth-child(1) {
+        width: 25%;
+      }
+      &:nth-child(2) {
+        width: 35%;
+      }
+      &:nth-child(3) {
+        width: 20%;
+      }
+      &:nth-child(4) {
+        width: 20%;
+        text-align: right;
+      }
+    }
+  }
+  .box {
+    ul {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 50px;
+      padding: 5px 0px;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 1px;
+        border-top: solid 1px rgba(0, 0, 0, 0.4);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.08);
+      }
+      li {
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        &:nth-child(1) {
+          width: 25%;
+          padding-right: 8px;
+        }
+        &:nth-child(2) {
+          width: 35%;
+          padding-right: 8px;
+        }
+        &:nth-child(3) {
+          width: 20%;
+          color: #09cd0d;
+        }
+        &:nth-child(4) {
+          width: 20%;
+          justify-content: flex-end;
+          color: #fae458;
+        }
+      }
+    }
+  }
+  .page {
+    padding: 15px 0px;
+    .q-pagination {
+      justify-content: center;
+      .q-pagination__content {
+        .q-btn {
+          height: 26px;
+        }
+        .text-purple {
+          color: #ccc !important;
+        }
+        .bg-purple {
+          background: #5c4b94 !important;
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// =========== Tabs userCenter ========================
+// ==================================================
+.user_one {
+  padding: 25px 20px;
+  ul {
+    position: relative;
+    display: table;
+    width: 100%;
+    li {
+      float: left;
+    }
+    li:nth-child(1) {
+      display: table;
+      width: 56px;
+      height: 56px;
+      border-radius: 100%;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+      img {
+        width: 56px;
+        height: 56px;
+        float: left;
+        border-radius: 100%;
+      }
+    }
+    li:nth-child(2) {
+      padding-left: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      p:nth-child(1) {
+        font-size: 22px;
+        color: #fff;
+      }
+      p:nth-child(2) {
+        color: #999;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    }
+    li:nth-child(3) {
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      transform: translateY(-50%);
+      a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: url(~assets/AppSkinD/images/User/Icon_01.png) no-repeat center center / 75% auto;
+        text-indent: -1000px;
+        overflow: hidden;
+        .q-badge {
+          top: 0px;
+          right: 0px;
+          text-indent: 0px;
+        }
+      }
+    }
+  }
+}
+.UserCenter_page {
+  .user_two {
+    position: relative;
+    width: calc(100% - 40px);
+    margin: 0px 20px;
+    margin-top: 15px;
+    @include box_background();
+    border-radius: $radius;
+    ul {
+      position: relative;
+      li {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        a {
+          position: absolute;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          left: 0px;
+          top: 0px;
+          color: #fff;
+          text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.6);
+          padding-left: 32%;
+          font-size: 14px;
+          color: #ffbe18;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        // background: url(~assets/AppSkinD/images/User/Site_03.png) no-repeat 8% center / auto 80%;
+        background-image: url(~assets/AppSkinD/images/User/Site_03.png), url(~assets/AppSkinD/images/User/Site_04.png);
+        background-position:
+          8% center,
+          110% center;
+        background-repeat: no-repeat, no-repeat;
+        background-size:
+          auto 80%,
+          auto 230%;
+      }
+    }
+  }
+}
+.user_five {
+  padding: 0px 20px;
+  ul {
+    position: relative;
+    display: table;
+    width: 100%;
+    padding: 0px 25px;
+    margin-top: 15px;
+    @include box_background();
+    li {
+      position: relative;
+      float: left;
+      width: 100%;
+      display: table;
+      z-index: 2;
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: auto 20px;
+      a,
+      .q-btn {
+        padding: 19px 0px 19px 35px;
+        border-top: solid 1px rgb(255, 255, 255, 0.1);
+        width: 100%;
+        display: block;
+        color: #ccc;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        line-height: 14px;
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 30px;
+          background: url(~assets/AppSkinD/images/System/Site_07.png) no-repeat center right / auto 50%;
+        }
+      }
+      .q-btn {
+        .q-btn__content {
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+      .q-btn:before {
+        display: none;
+      }
+      &:nth-child(1) {
+        a,
+        .q-btn {
+          border: none;
+        }
+      }
+    }
+  }
+}
+.user_five ul:nth-child(1) li:nth-child(1) {
+  background-image: url(~assets/AppSkinD/images/User/Icon_pc_03.png);
+}
+.user_five ul:nth-child(2) li:nth-child(1) {
+  background-image: url(~assets/AppSkinD/images/User/Icon_pc_04.png);
+}
+.user_five ul:nth-child(2) li:nth-child(2) {
+  background-image: url(~assets/AppSkinD/images/User/Icon_pc_05.png);
+}
+.user_five ul:nth-child(2) li:nth-child(3) {
+  background-image: url(~assets/AppSkinD/images/User/Icon_pc_06.png);
+}
+.user_three {
+  padding: 0px 20px;
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    li {
+      text-align: center;
+      //@include box_background();
+      border: none;
+      flex: 1;
+      a,
+      .q-btn {
+        display: block;
+        width: 100%;
+        color: #ccc;
+        padding-top: 28px;
+        background-position: center 0px;
+        background-repeat: no-repeat;
+        background-size: auto 25px;
+        .q-badge {
+          right: auto;
+          left: 50%;
+          top: 2px;
+          transform: translateY(-50%);
+          margin-left: 4px;
+        }
+      }
+      &:nth-child(1) {
+        a,
+        .q-btn {
+          background-image: url(~assets/AppSkinD/images/User/Icon_02.png);
+        }
+      }
+      &:nth-child(2) {
+        a,
+        .q-btn {
+          background-image: url(~assets/AppSkinD/images/User/Icon_03.png);
+        }
+      }
+      &:nth-child(3) {
+        a,
+        .q-btn {
+          background-image: url(~assets/AppSkinD/images/User/Icon_04.png);
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// =========== vip ========================
+// ==================================================
+.vip_two {
+  padding: 0px 16px 0px 16px;
+  position: relative;
+  .vip_two_box {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    @include box_background();
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 1;
+      background-color: #0009;
+      border-radius: $radius;
+      background: url(~assets/AppSkinD/images/Vip/Bb_05.png) no-repeat center top / 100% auto;
+    }
+    ul {
+      position: relative;
+      z-index: 2;
+      li:nth-child(1) img {
+        height: 25px;
+      }
+      li:nth-child(2) {
+        color: #fef594;
+        padding-bottom: 5px;
+      }
+      li:nth-child(3),
+      li:nth-child(4) {
+        position: relative;
+        color: #e5e5e5;
+        font-size: 12px;
+        width: 100%;
+        padding-top: 22px;
+        margin-top: 10px;
+        p:nth-child(1),
+        p:nth-child(2) {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        p:nth-child(2) {
+          left: auto;
+          right: 0px;
+        }
+        p:nth-child(3) {
+          position: relative;
+          width: 100%;
+          height: 5px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 5px;
+          span {
+            position: absolute;
+            display: inline-block;
+            height: 5px;
+            border-radius: 5px;
+            background: linear-gradient(#eee, #6bc602);
+            left: 0px;
+            top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+.vip_two:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: 10%;
+  width: 150px;
+  height: 95px;
+  background: url(~assets/AppSkinD/images/Vip/Site_02.png) no-repeat right top / auto 100%;
+  z-index: 10;
+}
+.vip_title {
+  padding: 12px 16px 10px 16px;
+  color: #f0df12;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.vip-three {
+  padding: 0px 16px;
+  .q-tabs {
+    .q-tabs__content {
+      .q-tab {
+        ol {
+          position: relative;
+          width: 90px;
+          margin-left: 12px;
+          z-index: 5;
+          li {
+            position: relative;
+            z-index: 5;
+            img {
+              width: 60%;
+            }
+            &:nth-child(1) {
+              @include box_background();
+              padding: 10px 0px;
+              p {
+                display: flex;
+                margin: 0px;
+                justify-content: center;
+                align-items: center;
+                color: #d3f038;
+              }
+            }
+            &:nth-child(2) {
+              height: 50px;
+              &::before {
+                content: "";
+                position: absolute;
+                z-index: 3;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                background: url(~assets/AppSkinD/images/Box/Box_05.png) no-repeat center bottom / auto 80%;
+                filter: grayscale(100%);
+              }
+            }
+          }
+          &::after {
+            content: "";
+            width: calc(100% + 12px);
+            height: 5px;
+            position: absolute;
+            z-index: 1;
+            left: 0px;
+            bottom: 15px;
+            background-color: #222;
+          }
+        }
+        .ul_active {
+          li {
+            &:nth-child(2) {
+              &::before {
+                filter: grayscale(0%);
+              }
+            }
+          }
+          &::after {
+            background-color: rgb(255, 255, 255, 0.2);
+          }
+        }
+        .ul_open {
+          li {
+            &:nth-child(2) {
+              &::before {
+                background: url(~assets/AppSkinD/images/Box/Box_05_on.png) no-repeat center bottom / auto 75%;
+                filter: grayscale(0%);
+              }
+            }
+          }
+        }
+        .ul_closed {
+          li {
+            &:nth-child(2) {
+              &::before {
+                filter: grayscale(0%);
+              }
+            }
+          }
+        }
+        &:first-child {
+          ol {
+            margin-left: 0px;
+            &::after {
+              width: calc(50% + 12px);
+              left: 50%;
+            }
+          }
+          .ul_active {
+            li {
+              &:nth-child(2) {
+                &::before {
+                  filter: grayscale(100%);
+                }
+              }
+            }
+          }
+        }
+        &:last-child {
+          ol {
+            &::after {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.vip_four {
+  padding: 0px 16px 16px 16px;
+  .q-tabs {
+    .q-tabs__content {
+      .q-tab {
+        .q-tab__content {
+          .vip_four_slide {
+            position: relative;
+            width: 300px;
+            margin-left: 15px;
+            padding: 16px 16px 20px 16px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            @include box_background();
+            text-align: left;
+            .one {
+              position: relative;
+              z-index: 2;
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+              img {
+                height: 40px;
+                margin-right: 10px;
+              }
+            }
+            .title {
+              position: relative;
+              z-index: 2;
+              color: #e5e5e5;
+              margin: 10px 0;
+            }
+            .two {
+              position: relative;
+              z-index: 2;
+              display: flex;
+              justify-content: space-between;
+              ul {
+                width: 47.5%;
+                background-color: rgba(0, 0, 0, 0.2);
+                border-radius: $radius;
+                text-align: center;
+                font-size: 12px;
+                padding: 8px 0px;
+                li:nth-child(1) {
+                  transform: scale(0.8);
+                  color: #ccc;
+                }
+                li:nth-child(2) {
+                  color: #fdf36f;
+                }
+              }
+            }
+            .text,
+            p {
+              font-size: 12px;
+              word-break: normal;
+              text-transform: none;
+            }
+          }
+        }
+        &:nth-child(1) {
+          .q-tab__content {
+            .vip_four_slide {
+              margin-left: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// =========== deposit ========================
+// ==================================================
+.Wallets_header {
+  width: 100%;
+  padding: 16px;
+  .box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    @include Tabs_background();
+    p {
+      position: relative;
+      z-index: 3;
+      flex: auto;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+      border-radius: $radius - 2;
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        padding: 12px 0px;
+        font-weight: bold;
+      }
+      .q-btn {
+        width: 100%;
+        text-align: center;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+        &::before,
+        .q-focus-helper {
+          display: none;
+        }
+        .q-btn__content {
+          padding: 12px 0px;
+        }
+      }
+    }
+    .active {
+      @include Tabs_active();
+      a,
+      .q-btn {
+        color: #ff7070;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+  .box_two {
+    p {
+      width: 50%;
+    }
+  }
+  .box_three p {
+    width: 33.33%;
+  }
+}
+.Wallets_one {
+  padding: 0px 16px;
+  ul {
+    position: relative;
+    padding: 16px 20px;
+    @include box_background();
+    text-align: center;
+    li {
+      display: inline-block;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffbe18;
+      &:nth-child(1) {
+        margin-right: 3px;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    margin-top: 16px;
+    position: relative;
+    color: #eae177;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    padding: 16px 0px;
+    @include box_background();
+  }
+}
+.Wallets_title {
+  padding: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-weight: bold;
+}
+.deposit_main {
+  position: relative;
+  padding: 0px 16px;
+}
+.Wallets_radio {
+  position: relative;
+  z-index: 2;
+  .q-radio {
+    width: 30%;
+    padding: 0px;
+    margin-top: 12px;
+    margin-right: 5%;
+    .q-radio__inner {
+      display: none;
+    }
+    .q-radio__label {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-size: 14px;
+      color: #fff;
+      @include box_background();
+      p:nth-child(1) {
+        padding: 80px 0px 10px 0px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        background: url(~assets/AppSkinD/images/System/Icon_40.png) no-repeat center 25px / auto 50%;
+      }
+      p:nth-child(2) {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        font-size: 12px;
+        background-color: #ff0000;
+        color: #fff;
+        border-radius: $radius - 3px;
+        padding: 0px 5px;
+        transform: scale(0.8);
+      }
+    }
+  }
+  .q-radio:nth-child(3n) {
+    margin-right: 0px;
+  }
+  .q-radio:nth-child(1),
+  .q-radio:nth-child(2),
+  .q-radio:nth-child(3) {
+    margin-top: 0px;
+  }
+  .q-radio[aria-checked="true"] .q-radio__label {
+    background: #9900ca;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      box-sizing: border-box;
+      border: solid 2px #ff7170;
+      border-radius: $radius + 2px;
+    }
+  }
+}
+.Wallets_input {
+  margin-top: 16px;
+}
+.q-form .Wallets_title {
+  margin-top: 10px;
+}
+.Wallets_radio_two {
+  .q-radio {
+    width: 47%;
+    .q-radio__label {
+      p:nth-child(1) {
+        padding: 10px 0px;
+        background: none;
+      }
+    }
+  }
+  .q-radio:nth-child(2) {
+    margin-right: 0px;
+  }
+}
+.Wallets_checkbox {
+  position: relative;
+  z-index: 2;
+  .q-checkbox__label {
+    line-height: 14px;
+  }
+}
+.Wallets_Submit {
+  padding: 30px 16px;
+  text-align: center;
+  .q-btn {
+    width: 100%;
+  }
+}
+.Wallets_box {
+  position: relative;
+  margin: 0px 16px;
+  padding: 0px 0px 20px 0px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  .title {
+    padding-bottom: 12px;
+    font-weight: bold;
+  }
+}
+// ==================================================
+// =========== rechargeQrcode =======================
+// ==================================================
+.Wallets_qr {
+  padding: 16px;
+  ul {
+    position: relative;
+    padding: 20px 30px;
+    text-align: center;
+    @include box_background();
+    li {
+      position: relative;
+      z-index: 5;
+    }
+    li:nth-child(1) {
+      text-align: left;
+      line-height: 18px;
+      font-size: 13px;
+    }
+    li:nth-child(2) {
+      padding: 20px 0px;
+      img {
+        width: 60%;
+      }
+    }
+    .Sys_Btn_Submit_qr {
+      padding: 15px 0px;
+      .q-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+.Wallets_tips {
+  padding: 0px 0px 16px 0px;
+  .text-red {
+    color: #e8e078 !important;
+  }
+}
+// ==================================================
+// ============== withdraw ==========================
+// ==================================================
+.Wallets_form {
+  padding: 16px 16px 0px 16px;
+  .list {
+    position: relative;
+    padding: 20px 20px 30px 20px;
+    @include box_background();
+    .list_input {
+      position: relative;
+      z-index: 2;
+      .Sys_input_text {
+        min-height: 60px;
+        .q-field__after {
+          position: absolute;
+          top: 2px;
+          right: 8px;
+          margin: 0px;
+          padding: 0px;
+          .icon_edit {
+            background: url(~assets/AppSkinD/images/System/Icon_38.png) no-repeat center center/auto 75%;
+          }
+        }
+      }
+    }
+    .label {
+      color: #fff;
+      padding-bottom: 5px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    .label_bottom {
+      color: #e5e5e5;
+      padding-top: 15px;
+    }
+    ul {
+      position: relative;
+      z-index: 2;
+      padding: 5px 0px 0px 0px;
+      li {
+        position: relative;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      li:nth-child(2) {
+        padding-right: 50px;
+        p {
+          position: relative;
+          width: 95%;
+          height: 8px;
+          margin-top: 10px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          i {
+            position: absolute;
+            display: inline-block;
+            height: 8px;
+            border-radius: 8px;
+            background-color: #e5e5e5;
+            background: linear-gradient(#eee, #6bc602);
+            left: 0px;
+            top: 0px;
+          }
+        }
+        span {
+          position: absolute;
+          right: 0px;
+          bottom: -7px;
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// ============== 记录列表，页面 ==========================
+// ==================================================
+.Cash_top {
+  padding: 0px 16px 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  .q-field {
+    @include Sys_select();
+    width: 47.5%;
+    padding-bottom: 0px;
+    .q-field__control,
+    .q-field__native {
+      padding: 0px;
+      height: 40px;
+    }
+    .q-field__native {
+      padding: 0px 15px;
+      color: #e5e5e5;
+    }
+  }
+  .q-field__control:before,
+  .q-field__control:after {
+    display: none;
+  }
+  .q-field__append,
+  .q-icon {
+    display: block;
+    position: absolute;
+    padding: 0px;
+    right: 0px;
+    top: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    text-indent: -200%;
+    color: #ba98cd;
+  }
+  .q-icon:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0px;
+    top: 0px;
+    background: url(~assets/AppSkinD/images/System/Icon_14.png) no-repeat center center;
+    background-size: auto 40%;
+  }
+}
+.Records_one {
+  padding: 16px;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      position: relative;
+    }
+    li:nth-child(1) {
+      width: 53%;
+    }
+    li:nth-child(2) {
+      width: 43%;
+    }
+    .q-field {
+      @include Sys_select();
+      .q-field__control {
+        min-height: 40px;
+        padding: 0px;
+      }
+      .q-field__control:before,
+      .q-field__control:after {
+        display: none;
+      }
+      .q-field__native {
+        padding: 0px 0px 0px 15px;
+        min-height: auto;
+        color: #e5e5e5;
+      }
+      .q-field__marginal {
+        height: auto;
+        background: url(~assets/AppSkinD/images/System/Icon_14.png) no-repeat center center;
+        background-size: auto 40%;
+        padding-left: 10px;
+        .q-icon {
+          width: 28px;
+          height: 24px;
+          svg {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+// ========== stream ==========
+.Sys_main {
+  display: flex;
+  padding: 0px 0px 4px 0px;
+  width: calc(100% - 32px);
+  height: calc(100% - 148px);
+  position: absolute;
+  left: 16px;
+  right: 150px;
+  z-index: 1;
+  .q-pa-md {
+    width: 100%;
+    z-index: 3;
+    padding: 0px;
+  }
+  .Record_list_ul {
+    ul {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 15px 0px;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        border-top: solid 1px rgba(0, 0, 0, 0.4);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.08);
+      }
+      li {
+        width: 75%;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      li:nth-child(1) p:nth-child(2) {
+        font-size: 12px;
+        margin-top: 5px;
+        color: #999;
+      }
+      li:nth-child(2) {
+        width: 25%;
+        text-align: right;
+      }
+    }
+    ul:first-child {
+      border-top: none;
+    }
+    ul:nth-last-child(2) {
+      border-bottom: none;
+    }
+  }
+}
+// ========== withdrawal,deposit ==========
+.Records_two_box {
+  position: relative;
+  display: flex;
+  width: calc(100% - 32px);
+  height: calc(100% - 91px);
+  position: absolute;
+  left: 16px;
+  top: 76px;
+}
+.Records_list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  .q-pa-md {
+    padding: 0px;
+  }
+  ol {
+    width: 100%;
+    padding: 5px 0px 0px 0px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    li {
+      float: left;
+      font-size: 13px;
+      width: 50%;
+      height: 30px;
+      line-height: 14px;
+      color: #999;
+    }
+    li:nth-child(2) {
+      width: 25%;
+      text-align: center;
+    }
+    li:nth-child(3) {
+      width: 25%;
+      text-align: right;
+    }
+  }
+  ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      border-top: solid 1px rgba(0, 0, 0, 0.4);
+      border-bottom: solid 1px rgba(255, 255, 255, 0.08);
+    }
+    li {
+      width: 50%;
+    }
+    li:nth-child(1) p:nth-child(2) {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
+    }
+    li:nth-child(2) {
+      width: 25%;
+      text-align: center;
+      color: #fff;
+    }
+    li:nth-child(3) {
+      width: 25%;
+      text-align: right;
+    }
+    .q-chip {
+      margin: 0px;
+      padding: 12px 8px;
+      .q-chip__content {
+        display: block;
+        text-align: center;
+      }
+    }
+    .text-grey-7 {
+      color: #666 !important;
+    }
+    .text-positive {
+      color: #444 !important;
+    }
+  }
+}
+// ======
+.Cash_top_two {
+  padding: 16px;
+}
+// ==================================================
+// ============== messages ==========================
+// ==================================================
+.mess {
+  padding: 0px 16px 16px;
+  a {
+    width: 100%;
+    display: block;
+  }
+  ul {
+    position: relative;
+    margin-top: 16px;
+    padding: 12px 16px;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    @include box_background();
+    .name {
+      font-size: 15px;
+      color: #ddd;
+    }
+    .time {
+      font-size: 12px;
+      padding: 5px 0px;
+      color: #ddd;
+    }
+    .text {
+      font-size: 13px;
+      line-height: 18px;
+      color: #ddd;
+    }
+  }
+  .active {
+    ul {
+      .name {
+        color: #fdf36f;
+      }
+      .time {
+        color: #fafafa;
+      }
+      .text {
+        color: #fff;
+      }
+    }
+    ul:before {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 24px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #ff0000;
+      border-radius: 100%;
+    }
+  }
+}
+// ==================================================
+// ============== profile ==========================
+// ==================================================
+.Profile_list {
+  position: relative;
+  width: calc(100% - 32px);
+  margin: 16px;
+  @include box_background();
+  .q-item {
+    position: relative;
+    min-height: 56px;
+    padding: 8px 20px;
+    z-index: 3;
+    &::before {
+      content: "";
+      position: absolute;
+      width: calc(100% - 40px);
+      height: 1px;
+      left: 20px;
+      top: 0px;
+      background-color: rgb(255, 255, 255, 0.1);
+    }
+    &:nth-child(1) {
+      &::before {
+        display: none;
+      }
+    }
+    .q-item__section {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      .q-item__label {
+        color: #ccc;
+      }
+    }
+    .q-field {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0px;
+      top: 0px;
+      .q-field__control {
+        background-color: transparent;
+        .q-field__native {
+          padding: 0px;
+          justify-content: flex-end;
+          padding-right: 30px;
+          color: #ccc;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .q-field__append {
+          display: none;
+        }
+      }
+      .q-field__control:before,
+      .q-field__control:after {
+        display: none;
+      }
+    }
+    .q-avatar {
+      border-radius: 100% !important;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+      img {
+        border: solid 1px #f8d14c;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .icon_right {
+    padding-right: 20px;
+  }
+  .icon_right:after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: url(~assets/AppSkinD/images/System/Site_07.png) no-repeat center right / auto 50%;
+  }
+  .q-btn {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    line-height: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+}
+// ==================================================
+// ============ profile 下一级页面  ==================
+// ==================================================
+.profile_form {
+  .profile_form_list {
+    padding: 20px 30px;
+  }
+  .list_input {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    .label {
+      color: #999;
+      font-size: 12px;
+      padding-bottom: 8px;
+    }
+    .Sys_input_text {
+      padding-bottom: 0px;
+      position: relative;
+      .q-field__control {
+        height: auto;
+        .q-field__prefix {
+          font-size: 14px;
+          padding: 8px 5px 15px 0px;
+          line-height: 16px;
+          height: 37px;
+          color: #999;
+        }
+      }
+      .q-field__control:before {
+        border-bottom-style: solid;
+      }
+      input {
+        font-size: 14px !important;
+      }
+    }
+    .Sys_input_text_code .q-field__after .q-btn {
+      border: none;
+      width: 85px;
+      height: 28px;
+    }
+    .Sys_input_text_code .q-avatar {
+      border: none;
+      border-radius: 30px;
+      width: 85px;
+      height: 28px;
+    }
+  }
+  .Sys_Btn_Submit {
+    padding: 15px 0px;
+    text-align: center;
+  }
+  .list_input_select {
+    padding-bottom: 20px;
+    .profile_select {
+      background: rgb(255, 255, 255, 0.1);
+      padding: 10px 15px;
+    }
+  }
+  .list_input_phone {
+    .q-field {
+      .q-field__inner {
+        .q-field__control {
+          position: relative;
+          .q-field__prepend {
+            position: absolute;
+            z-index: 3;
+            padding: 0px;
+            font-size: 15px;
+            color: #ccc;
+            top: 2px;
+            span {
+              padding: 0px 17px;
+              border-right: solid 1px #ccc;
+              line-height: 18px;
+            }
+          }
+          .q-anchor--skip {
+            input {
+              padding-left: 75px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// ============== profile/avatar ====================
+// ==================================================
+.Avatar_one {
+  position: relative;
+  width: calc(100% - 32px);
+  padding: 20px 0px 14px 0;
+  margin: 16px;
+  text-align: center;
+  @include box_background();
+  q {
+    width: 100%;
+  }
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 13px;
+    border: solid 2px #f8d14c;
+    background-color: #f4cc48;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+  }
+  .Sys_Btn_Submit {
+    padding: 10px 0px;
+    .q-btn {
+      width: 120px;
+      .q-btn__content {
+        font-size: 13px;
+        padding: 10px 0px;
+      }
+    }
+  }
+}
+.Avatar_img {
+  position: relative;
+  width: calc(100% - 32px);
+  padding: 16px 16px 20px 16px;
+  margin: 16px;
+  @include box_background();
+  .Avatar_title {
+    position: relative;
+    color: #e5e5e5;
+    padding-bottom: 20px;
+    z-index: 3;
+    color: #f0df12;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  .box {
+    position: relative;
+    width: 100%;
+    display: table;
+    z-index: 3;
+    .box_img {
+      width: 20%;
+      float: left;
+      text-align: center;
+      padding-bottom: 15px;
+      .q-avatar {
+        border-radius: 100px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+        .q-avatar__content {
+          background-color: #f4cc48;
+          border: 2px solid #fff;
+        }
+      }
+      .active .q-avatar__content {
+        border: 2px solid #e6ee9c;
+      }
+    }
+  }
+}
+// ==================================================
+// ============== Service ==========================
+// ==================================================
+.Service_one {
+  padding: 0px 15px 15px 15px;
+  .q-btn {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    height: 80px;
+    padding-left: 100px;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    @include box_background();
+  }
+  p {
+    text-align: left;
+    width: 100%;
+    span {
+      display: block;
+      font-size: 12px;
+    }
+    span:nth-child(1) {
+      padding-bottom: 10px;
+      font-size: 16px;
+      color: #e5e5e5;
+    }
+  }
+  p:nth-child(1) {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    img {
+      width: 50px;
+    }
+  }
+}
+//=======================回归活动页面==========================
+.Qdialog-Activity {
+  background: none;
+  box-shadow: none;
+  ul {
+    position: relative;
+    width: 200px;
+    padding: 50px 0px 20px 0px;
+    @include Sys_Dialog();
+    margin-top: 50px;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100px;
+      left: 0px;
+      top: -50px;
+      background: url(~assets/AppSkinD/images/System/Bg_06_home.png) no-repeat top center / auto 95%;
+    }
+    li {
+      text-align: center;
+      color: #e3db75;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      &:nth-child(1) {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        font-size: 12px;
+        padding: 5px 15px 15px 15px;
+      }
+      &:nth-child(3) {
+        .q-btn {
+          width: 85px;
+          @include Btn_box_background();
+          padding: 8px 0px;
+        }
+      }
+    }
+  }
+}
+.Sys_back_Activity {
+  width: 36px;
+  height: 36px;
+  right: 5px;
+  top: 50%;
+  z-index: 99;
+  padding: 0px;
+  margin: 0px;
+  div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    a {
+      width: 100%;
+      height: 100%;
+      background: url(~assets/AppSkinD/images/System/Site_06.png) no-repeat center center / auto 95%;
+      animation: zoom 0.9s ease-in-out infinite alternate;
+    }
+    p {
+      position: absolute;
+      width: auto;
+      word-break: normal;
+      text-align: center;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      span {
+        display: block;
+        transform: scale(0.8);
+        color: #fff;
+      }
+    }
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
+.back_activity {
+  background: url(~assets/AppSkinD/images/System/Bg_06.png) no-repeat center top / 100% auto;
+  .title_img {
+    padding: 30px 25px 0px 25px;
+    padding-right: 30%;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    color: #e3db75;
+    height: 130px;
+    p {
+      &:nth-child(1) {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .activity_time {
+    width: 100%;
+    padding: 10px 0px 16px 0px;
+    text-align: center;
+    font-size: 12px;
+    color: #e3db75;
+    span {
+      display: inline-block;
+      padding: 0px 10px;
+      background-color: rgb(0, 0, 0, 0.2);
+      border-radius: 15px;
+      line-height: 25px;
+    }
+  }
+  .back_player {
+    padding: 0px 16px 16px 16px;
+    .back_player_box {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 12px;
+      @include box_background();
+      ul {
+        position: relative;
+        padding-left: 100px;
+        padding-bottom: 60px;
+        li {
+          &:nth-child(1) {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 90px;
+            height: 100px;
+          }
+          &:nth-child(2) {
+            font-size: 16px;
+            padding: 5px 0px;
+            color: #e3db75;
+          }
+          &:nth-child(3) {
+            font-size: 12px;
+            line-height: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          &:nth-child(4) {
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            transform: translateX(-50%);
+            .q-btn {
+              min-width: 85px;
+              padding: 9px 0px !important;
+              @include Btn_box_background();
+            }
+            .disabled {
+              filter: grayscale(80%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// =================== 其他 ==========================
+// ==================================================
+.Sys_main_level {
+  height: calc(100% - 175px);
+  background: #242e37;
+}
+.Sys_main_level_details {
+  height: calc(100% - 190px);
+  background: #242e37;
+}
+// ==================================================
+// ============== 移动端隐藏 =========================
+// ==================================================
+.q-drawer-container {
+  .q-drawer__opener {
+    display: none;
+  }
+  .fullscreen {
+    display: none;
+  }
+}
+.Pc_Sys_Header {
+  .left_menu {
+    display: none;
+  }
+}
+.Pc_show {
+  display: none;
+}
+.Pc {
+  display: none;
+}
+.Mo {
+  display: block;
+}
+.Sys_page_two {
+  .Sys_bottom_sticky {
+    display: none;
+  }
+}
+.Sys_page {
+  .q-page-sticky {
+    display: none;
+  }
+}
+.showGame_page {
+  .Sys_bottom_sticky {
+    display: none;
+  }
+}
+// ==================================================
+// ===== 引入媒体查询 _app-media.scss 样式文件 =======
+// ==================================================
+@import "AppSkinD-media";

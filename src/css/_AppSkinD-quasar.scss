@@ -1,0 +1,801 @@
+// ========== 背景颜色 ===========
+body {
+  background-color: #45025f;
+}
+.q-page-container {
+  background: #45025f;
+  //background: linear-gradient(to bottom, #3d3479 250px, #3d356d 500px, #302a57);
+}
+// ========== 共用属性&变量 ===========
+$radius: 8px;
+$btn-background-color: linear-gradient(to bottom, #ff7170, #ff6565);
+@mixin Sys_select() {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: $radius;
+}
+@mixin box_background() {
+  position: relative;
+  border-radius: $radius;
+  background: #540474;
+  box-shadow:
+    0px 1px 1px rgba(255, 255, 255, 0.1) inset,
+    1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+@mixin Tabs_background() {
+  background: #4E036C;
+  border-radius: $radius;
+}
+@mixin Tabs_active() {
+  border-radius: $radius;
+  background: #6B048C;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0px 1px 1px rgba(255, 255, 255, 0.2) inset,
+    1px 1px 3px rgb(0, 0, 0, 0.1);
+}
+@mixin Sys_Dialog() {
+  background-color: #540474;
+  border-radius: $radius;
+  max-width: 300px;
+  min-width: 250px;
+}
+@mixin Sys_Dialog_title() {
+  background-color: #6B048C;
+  padding: 12px 30px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+@mixin Btn_box() {
+  font-size: 12px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0px;
+}
+@mixin Btn_box_background() {
+  position: relative;
+  border-radius: $radius;
+  padding: 13px 0px;
+  background: $btn-background-color;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  box-shadow:
+    0px 1px 2px rgba(255, 255, 255, 0.5) inset,
+    1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+@mixin Btn_box_background_disabled() {
+  opacity: 1 !important;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+// ========== 一级页面，顶部Header ===========
+.Main_Header {
+  width: 100%;
+  height: 55px;
+  .Pc_Sys_Header {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: #540474;
+    z-index: 50;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  .Pc_Sys_Header,
+  .Pc_Sys_Header_box {
+    width: 100%;
+    height: 55px;
+    justify-content: space-between;
+  }
+  .Pc_Sys_Header_box_Logo {
+    float: left;
+    display: flex;
+    align-items: center;
+    max-width: 140px;
+    float: left;
+    height: 100%;
+    z-index: 5;
+    img {
+      height: 40px;
+    }
+  }
+  ul {
+    height: 32px;
+    li {
+      float: left;
+      a {
+        display: inline-block;
+        line-height: 30px;
+        font-size: 12px;
+        padding: 0px 5px;
+        border-radius: $radius;
+        border: solid 1px #ff7170;
+        color: #fff;
+      }
+      &:nth-child(2) {
+        margin-left: 10px;
+        a {
+          background-color: #ff7170;
+        }
+      }
+    }
+  }
+  ol {
+    float: right;
+    li {
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: none;
+      }
+      &:nth-child(1) {
+        .q-btn {
+          position: relative;
+          z-index: 5;
+          height: 30px;
+          padding: 0px 10px 0px 35px;
+          text-shadow:
+            1px 1px 0px rgba(0, 0, 0, 0.5),
+            1px 1px 3px rgba(0, 0, 0, 0.7);
+          box-sizing: border-box;
+          font-weight: bold;
+          color: #ffbe18;
+          font-size: 18px;
+          //background-color: rgba(255, 255, 255, 0.1);
+          background-color: #410359;
+          border-radius: $radius;
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 8px;
+            right: auto;
+            top: 0px;
+            z-index: 6;
+            bottom: auto;
+            width: 27px;
+            height: 30px;
+            background: url(~assets/AppSkinD/images/Header/Icon_31.png) no-repeat center center / auto 90%;
+          }
+          .q-btn__content {
+            min-width: 50px;
+            justify-content: right;
+          }
+        }
+      }
+    }
+  }
+}
+// ========== 一级页面，底部footer ===========
+.Sys_footer_tabs {
+  background: none;
+  .q-tabs {
+    height: 100%;
+    background: #3c0054;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+    .q-tabs__content {
+      height: 100%;
+      .q-tab {
+        position: relative;
+        width: 25%;
+        padding: 0px;
+        .q-focus-helper,
+        .q-tab__indicator {
+          display: none;
+        }
+        .q-tab__content {
+          position: relative;
+          min-width: 100%;
+          width: 100%;
+          padding: 0px;
+          .q-icon {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center 10px;
+            background-size: auto 43%;
+            overflow: hidden;
+            text-indent: -1000px;
+          }
+          .q-tab__label {
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            bottom: 2px;
+            font-size: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+          }
+          .q-badge {
+            top: 6px;
+            right: 50%;
+            margin-right: -15%;
+            background: linear-gradient(to bottom right, #ffd7d4, #ff1100) !important;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            transform: scale(0.85);
+          }
+        }
+        &:nth-child(1) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_01_off.png);
+        }
+        &:nth-child(2) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_02_off.png);
+        }
+        &:nth-child(3) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_04_off.png);
+        }
+        &:nth-child(4) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_05_off.png);
+        }
+      }
+      .q-tab--active {
+        .q-tab__content {
+          .q-tab__label {
+            display: block;
+            font-weight: bold;
+            color: #e25a67;
+          }
+        }
+        &:nth-child(1) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_01_on.png);
+        }
+        &:nth-child(2) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_02_on.png);
+        }
+        &:nth-child(3) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_04_on.png);
+        }
+        &:nth-child(4) .q-tab__icon {
+          background-image: url(~assets/AppSkinD/images/Footer/menu_05_on.png);
+        }
+      }
+    }
+    .q-icon {
+      display: none;
+    }
+  }
+  .q-layout__shadow {
+    display: none;
+  }
+}
+
+// ========== 二级级页面，顶部Header ===========
+.q-header {
+  background: none;
+  .q-toolbar {
+    padding: 0px;
+    min-height: 55px;
+    text-align: center;
+    background: #540474;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    .icon_left,
+    .icon_right {
+      display: inline-block;
+      min-height: 32px;
+      min-width: 32px;
+      position: absolute;
+      top: 10px;
+      z-index: 5;
+      .q-focus-helper {
+        display: none;
+      }
+      .q-btn__content {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: auto 55%;
+        }
+      }
+    }
+    .icon_left {
+      left: 10px;
+      min-width: 40px;
+      .q-btn__content {
+        min-width: 40px;
+        &::after {
+          background-image: url(~assets/AppSkinD/images/Header/Site_01.png);
+          background-size: auto 70%;
+        }
+      }
+    }
+    .icon_right {
+      right: 10px;
+    }
+    .icon_1,
+    .icon_2,
+    .icon_3 {
+      .q-btn__content {
+        &::after {
+          background-image: url(~assets/AppSkinD/images/System/Site_03.png);
+          background-size: auto 75%;
+        }
+      }
+    }
+    .q-toolbar__title {
+      font-size: 20px;
+      text-align: center;
+      margin: 0px;
+      color: #fff;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+// ========== 表单 ===========
+.Sys_input_text *:before,
+.Sys_input_text *:after {
+  display: none;
+}
+// ==========
+.Sys_input_text {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0px;
+  position: relative;
+  .q-field__inner {
+    display: table;
+    width: 100%;
+    .q-field__control {
+      height: auto;
+      .q-field__append {
+        display: none;
+      }
+      .q-anchor--skip {
+        @include Sys_select();
+        input {
+          color: #fff;
+          padding: 15px;
+          margin: 0px;
+          line-height: normal;
+          box-sizing: border-box;
+          font-size: 14px;
+          border-radius: $radius;
+        }
+        input::-webkit-input-placeholder {
+          color: #fff;
+        }
+      }
+    }
+    .q-field__bottom {
+      display: table;
+      position: relative;
+      width: 100%;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin: 0;
+      padding: 10px 0;
+      min-height: auto;
+      transform: translateY(0%);
+      color: #ff0000;
+    }
+  }
+}
+// ==========
+.profile_select {
+  padding: 10px 10px 10px 15px;
+  @include Sys_select();
+  .q-field__control {
+    min-height: auto;
+    padding: 0px;
+    background-color: transparent;
+    .q-field__native {
+      min-height: auto;
+      padding: 0px;
+      color: #fff;
+    }
+    .q-field__marginal {
+      height: auto;
+    }
+    .q-icon {
+      width: 24px;
+      height: 24px;
+      background: url(~assets/AppSkinD/images/System/Icon_14.png) no-repeat center center/auto 80%;
+      svg {
+        display: none;
+      }
+    }
+  }
+  .q-field__control:before,
+  .q-field__control:after {
+    display: none;
+  }
+}
+// ==========
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-small {
+  font-size: 0.8rem !important;
+}
+// ========== select下拉选择 ===========
+.q-select__dialog {
+  width: 75vw !important;
+  max-width: 75vw !important;
+  border-radius: 5px !important;
+  background: linear-gradient(to bottom, #626d9d, #626d9d);
+  color: #fff;
+  border: solid 2px #b3d8e7;
+  .q-field {
+    display: none;
+  }
+  .q-virtual-scroll__content {
+    padding: 10px 15px;
+  }
+  .q-item {
+    padding: 0px;
+    min-height: 50px;
+    .q-item__section {
+      position: relative;
+      padding: 0px 20px;
+    }
+  }
+  .q-item--active {
+    color: #93f06a;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    .q-item__section:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 40px;
+      left: 0px;
+      top: 5px;
+      background-color: #44435d;
+      z-index: -2;
+      border-radius: 5px;
+    }
+  }
+}
+// ========== 日期选择 ===========
+.Sys_popup_date {
+  .q-dialog__inner--minimized {
+    padding: 0px;
+    .q-date {
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+      background: #413670;
+      .q-date__header {
+        background-color: #4548a7;
+      }
+      .q-date__main {
+        color: #fff;
+      }
+    }
+    .q-date__calendar-weekdays > div {
+      opacity: 0.6;
+    }
+  }
+  .flex-center {
+    align-items: flex-end;
+  }
+  .Sys_Btn_Submit {
+    padding: 0px 0px 10px 0px;
+    text-align: center;
+    .q-btn {
+      width: 40%;
+      .q-btn__content {
+        padding: 8px 0px;
+      }
+    }
+  }
+  .text-primary {
+    color: #101a20 !important;
+  }
+}
+// ==================================================
+// ===================== 弹窗 =======================
+// ==================================================
+.Sys_dialog {
+  .q-card {
+    @include Sys_Dialog();
+  }
+  .Sys_dialog_title {
+    @include Sys_Dialog_title();
+    .name {
+      padding: 0px;
+    }
+    .q-btn {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 30px;
+      height: 30px;
+      text-indent: -100px;
+      overflow: hidden;
+      background-color: #101a20;
+      background: url(~assets/AppSkinD/images/System/Site_02.png) no-repeat center center / 50% auto;
+    }
+  }
+  .scroll {
+    max-height: 80vh;
+  }
+  .Sys_dialog_content {
+    img {
+      max-width: 100%;
+    }
+    .box {
+      width: 100%;
+      img {
+        width: 100%;
+        margin: 0px auto;
+      }
+    }
+  }
+  // ===== rewards 领取成功 =====
+  .Sys_dialog_receber {
+    padding: 20px 15px;
+    text-align: center;
+    h2 {
+      width: 100%;
+      height: 110px;
+      background: url(~assets/AppSkinD/images/System/Site_05.png) no-repeat center center / auto 100%;
+    }
+    h3 {
+      margin: 0px;
+      padding: 0px 0px 10px 0px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: normal;
+      color: #f9f363;
+    }
+    li {
+      font-size: 13px;
+      span {
+        color: #f9f363;
+      }
+    }
+    .Sys_Btn_Submit {
+      width: 100%;
+      text-align: center;
+      padding-top: 25px;
+      margin: 0xp auto;
+      .q-btn {
+        width: 110px;
+        font-size: 16px;
+        .q-btn__content {
+          padding: 10px 0px;
+        }
+      }
+    }
+  }
+}
+// ===== messages页面弹窗,对话框  =====
+.q-dialog-plugin {
+  @include Sys_Dialog();
+  .q-dialog__title {
+    @include Sys_Dialog_title();
+  }
+  .q-dialog__message {
+    padding-top: 16px !important;
+  }
+  .q-card__actions--horiz {
+    justify-content: center;
+    padding: 0px 16px 20px 16px;
+    .q-btn {
+      text-transform: uppercase;
+      width: 90px;
+      margin: 0px 15px;
+      box-shadow: none;
+      @include Btn_box();
+      .q-btn__content {
+        @include Btn_box_background();
+        padding: 9px 0px;
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .q-btn:nth-child(2n) {
+      opacity: 0.9 !important;
+      filter: grayscale(90%);
+    }
+  }
+}
+// ===== 签到  =====
+.User_tabs {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #4E036C;
+    z-index: 1;
+    border-radius: $radius;
+  }
+  .q-tabs__content {
+    z-index: 2;
+    .q-tab {
+      padding: 0px;
+      min-height: 36px;
+      .q-tab__content {
+        padding: 0px;
+        width: 80px;
+        z-index: 3;
+        color: #FFF;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+        .q-tab__label {
+          width: 100%;
+          min-height: 28px;
+          line-height: 28px;
+        }
+      }
+    }
+    .q-tab--active {
+      .q-tab__content {
+        padding: 2px;
+        color: #FF7070;
+      }
+      .q-tab__indicator {
+        height: calc(100% - 6px);
+        width: calc(100% - 6px);
+        z-index: 1;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border-radius: $radius;
+        background-color: #6B048C;
+        box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.2) inset, 1px 1px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+.User_tabs_panels {
+  background-color: transparent;
+  .q-tab-panel {
+    padding: 0px;
+  }
+  .q-radio {
+    width: 30%;
+    padding: 0px;
+    margin: 16px 5% 0px 0px;
+    .q-radio__inner {
+      display: none;
+    }
+    .q-radio__label {
+      width: 100%;
+      height: 90px;
+      text-align: center;
+      border-radius: $radius;
+      position: relative;
+      font-size: 12px;
+      color: #eee;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+      background: #9900CA;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 25px;
+        left: 0px;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0px 0px $radius $radius;
+      }
+      p {
+        position: relative;
+        z-index: 2;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+      }
+      p:nth-child(1) {
+        height: 65px;
+        text-align: left;
+        background: url(~assets/AppSkinD/images/Box/Box_05_on.png) no-repeat center 22px / auto 35px;
+        color: #f1d8af;
+        i {
+          display: inline-block;
+          transform: scale(0.9);
+          padding: 2px 0px 0px 6px;
+          font-weight: bold;
+        }
+      }
+      p:nth-child(2) {
+        width: 100%;
+        margin: 0px;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 0px 0px $radius $radius;
+        color: #fff;
+        transform: scale(0.85);
+      }
+    }
+  }
+  .q-radio:nth-child(3n) {
+    margin-right: 0px;
+  }
+  .q-radio.active {
+    .q-radio__label {
+      background: #540474;
+      p:nth-child(1) {
+        background: url(~assets/AppSkinD/images/Box/Box_05.png) no-repeat center 22px / auto 35px;
+      }
+    }
+  }
+  .q-radio.disabled {
+    opacity: 0.9 !important;
+    //filter: grayscale(10%);
+    .q-radio__label {
+      background: #6B048C;
+      p:nth-child(1) {
+        background: url(~assets/AppSkinD/images/Box/Box_05.png) no-repeat center 22px / auto 35px;
+      }
+    }
+  }
+}
+.User_tab_one {
+  padding: 0px 0px 0px 0px;
+  ul {
+    position: relative;
+  }
+  li {
+    text-align: center;
+    color: #fff;
+  }
+  .Sys_Btn_Submit {
+    text-align: center;
+    padding: 16px 0px;
+    .q-btn {
+      width: 75%;
+      font-size: 12px;
+      .q-btn__content {
+        padding: 13px 0px;
+      }
+    }
+  }
+}
+.Sys_q-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  .q-btn,
+  .q-field {
+    height: 32px;
+    width: 32px;
+    background-color: #24243b;
+    margin: 0px 3px;
+    svg {
+      color: #999;
+    }
+  }
+  .q-field {
+    .q-field__inner {
+      .q-field__control {
+        height: 32px;
+        .q-field__control-container {
+          .q-field__native {
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+}
+// ==================================================
+// ================= 其他样式 ========================
+// ==================================================
+.full-width-download {
+  .full-width-content {
+    padding: 16px 16px 10px 16px;
+  }
+}
+// ==================================================
+// ===== 左侧滑菜单 =====================================
+// ==================================================
+// .q-drawer-container {
+//   background: none;
+//   .q-drawer {
+//     background: none;
+//     border: none;
+//   }
+// }
